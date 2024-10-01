@@ -13,13 +13,13 @@
   </head>
   <body>
     <div class="border">
-      <div class="windowBar">
-        <div class="dropdownWrapper">
-          <div class="windowBarTitle">
+      <div class="navbar">
+        <div class="navbarMenuWrapper">
+          <div class="navbarMenu">
             <img src="assets/icon/navbar.png" width="26" style="vertical-align: text-top" />
             Menu
           </div>
-          <div class="dropdown">
+          <div class="navbarMenuDropdown">
             <a onclick="render('main')" style="border-bottom: 2px solid black"><emoji>🫐</emoji> Main</a>
             <a style="color: gray"><emoji>🌈</emoji> Guestbook</a>
             <a style="color: gray"><emoji>🎶</emoji> Music</a>
@@ -29,7 +29,7 @@
             <a href="https://github.com/orangebae/bae.nekoweb.org"><emoji>👨‍💻</emoji>Source Code</a>
           </div>
         </div>
-        <div class="windowBarTime"></div>
+        <div class="navbarTime"></div>
       </div>
 
       <div class="pageWrapper">
@@ -39,9 +39,9 @@
               <div class="headerDate"></div>
               <div id="headerBoxes">
                 <div id="headerBox"></div>
-                <div id="headerBox" style="background: #ffd8ac"></div>
-                <div id="headerBox" style="background: #e9bd2e"></div>
-                <div id="headerBox" style="background: #ff7800"></div>
+                <div id="headerBox" style="background: var(--header-box-second-color)"></div>
+                <div id="headerBox" style="background: var(--header-box-third-color)"></div>
+                <div id="headerBox" style="background: var(--header-box-fourth-color)"></div>
               </div>
             </div>
             <div class="headerRight"></div>

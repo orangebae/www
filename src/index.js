@@ -1,20 +1,16 @@
-const dropdown = document.querySelector(".dropdown");
-const windowBarTitle = document.querySelector(".windowBarTitle");
+const dropdown = document.querySelector(".navbarMenuDropdown");
+const navbarMenu = document.querySelector(".navbarMenu");
 
-windowBarTitle.addEventListener("click", () => {
-  if (dropdown.classList.contains("toggleDropdown")) {
-    return dropdown.classList.remove("toggleDropdown");
-  }
-
-  dropdown.classList.toggle("toggleDropdown");
+navbarMenu.addEventListener("click", () => {
+  return dropdown.style.display === "block" ? (dropdown.style.display = "") : (dropdown.style.display = "block");
 });
 
 dropdown.addEventListener("click", () => {
-  return dropdown.classList.remove("toggleDropdown");
+  return (dropdown.style.display = "");
 });
 
 let allLoveLain = 0;
-const timeDisplay = document.querySelector(".windowBarTime");
+const timeDisplay = document.querySelector(".navbarTime");
 const dateDisplay = document.querySelector(".headerDate");
 
 setDateAndTime(timeDisplay);
