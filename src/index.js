@@ -19,8 +19,9 @@ timeDisplay.addEventListener("click", () => {
   allLoveLain++;
   if (allLoveLain <= 3) return;
 
-  timeDisplay.innerHTML = "Present day, present time";
-  dateDisplay.innerHTML = "Hahahahahaha!";
+  timeDisplay.innerHTML =
+    "\u0050\u0072\u0065\u0073\u0065\u006e\u0074\u0020\u0064\u0061\u0079\u002c\u0020\u0070\u0072\u0065\u0073\u0065\u006e\u0074\u0020\u0074\u0069\u006d\u0065";
+  dateDisplay.innerHTML = "\u0048\u0061\u0068\u0061\u0068\u0061\u0068\u0061\u0068\u0061\u0068\u0061!";
 });
 
 function setDateAndTime() {

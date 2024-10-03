@@ -116,6 +116,7 @@ body {
 
 .navbarTime {
   margin-right: 10px;
+  user-select: none;
 }
 
 .headerWrapper {
@@ -246,7 +247,7 @@ body {
   body {
     background-image: url("assets/background.jpg");
   }
-  
+
   .border {
     position: absolute;
     left: 50%;
