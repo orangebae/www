@@ -1,0 +1,18 @@
+ ---
+ const { href, icon } = Astro.props
+ ---
+<a class="button" href={href} target="_blank"><img src={icon} /> <slot /></a>
+
+<style>
+  .button {
+    font-size: 32px;
+    text-decoration: none;
+    float: left;
+    background-color: #8a8a8a1d;
+    border: none;
+    padding: 8px;
+    border-radius: 15px;
+    margin: 2px 2px;
+    cursor: pointer;
+  }
+</style>

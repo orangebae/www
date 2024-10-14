@@ -1,0 +1,83 @@
+<div class="headerWrapper">
+  <div class="header">
+    <div class="headerLeft">
+      <div class="headerDate"></div>
+      <div id="headerBoxes">
+        <div id="headerBox"></div>
+        <div id="headerBox" style="background: var(--header-box-second-color)"></div>
+        <div id="headerBox" style="background: var(--header-box-third-color)"></div>
+        <div id="headerBox" style="background: var(--header-box-fourth-color)"></div>
+      </div>
+    </div>
+    <div class="headerRight"></div>
+  </div>
+  <div class="headerBottom">
+    <div class="headerBottomToday">today</div>
+  </div>
+</div>
+
+<style>
+  .headerWrapper {
+    position: relative;
+  }
+
+  .header {
+    display: flex;
+    color: white;
+    position: relative;
+  }
+
+  .headerLeft {
+    background: var(--header-body-fallback-color);
+    background: var(--header-body-color);
+    height: 100px;
+    flex-grow: 1;
+  }
+
+  .headerDate {
+    position: absolute;
+    top: 8px;
+    right: 40px;
+    font-weight: 300;
+    font-size: 30px;
+  }
+
+  #headerBoxes {
+    position: absolute;
+    bottom: 13px;
+    right: 45px;
+    font-size: 18px;
+  }
+
+  #headerBox {
+    display: inline-block;
+    background: var(--header-box-default-color);
+    height: 15px;
+    width: 15px;
+    margin-left: 15px;
+  }
+
+  .headerRight {
+    background: var(--header-right-line-color);
+    height: 100px;
+    width: 30px;
+    order: 3;
+  }
+
+  .headerBottom {
+    border-bottom: 2px solid black;
+    background: var(--header-bottom-line-fallback-color);
+    background: var(--header-bottom-line-color);
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .headerBottomToday {
+    color: white;
+    font-family: Arial;
+    left: 10px;
+    top: 53px;
+    font-size: 50px;
+    position: absolute;
+  }
+</style>

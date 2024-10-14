@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Button from "../components/Button.astro";
+
+import { socials } from "../data/config.json";
+---
+
+<BaseLayout title="🐱🐾🪻">
+  <Header />
+  <main>
+    <h1>Ding Dong!</h1>
+    <p>
+      Stare at ceiling meow yet sniff catnip and act crazy mouse. Claws in your leg kitty time cats secretly make all
+      the worlds muffins ooh, are those your $250 dollar sandals? lemme use that as my litter box so fish i must find my
+      red catnip fishy fish yet rub butt on table, yet run around the house at 4 in the morning. Catching very fast
+      laser pointer rub my belly hiss ooooh feather moving feather! if it fits i sits why use post when this sofa is
+      here.
+    </p>
+
+    <h1>Links!</h1>
+    <p>
+    {
+      socials.map(({ name, icon, url }) => (
+        <Button href={url} icon={icon}>
+          {name}
+        </Button>
+      ))
+      
+    }
+    </p>
+  </main>
+</BaseLayout>
+
+<script>
+  import "../lib/lain.ts";
+</script>

@@ -1,0 +1,176 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class="border">
+      <Navbar />
+      <div class="pageWrapper" transition:animate="initial">
+        <div class="content">
+          <slot />
+        </div>
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<script>
+  import "../lib/lain.ts";
+</script>
+
+<style is:global>
+  :root {
+    --body-color: rgba(255, 255, 255, 0.8);
+    --navbar-color: #021fac;
+    --navbar-border-color: #1b35b4;
+    --navbar-menu-color: #bcb9bc;
+    --navbar-menu-hover-color: gray;
+    --header-body-color: linear-gradient(90deg, rgba(112, 205, 84, 1) 0%, rgba(0, 121, 215, 1) 69%);
+    --header-body-fallback-color: pink;
+    --header-box-default-color: #f3dbd0;
+    --header-box-second-color: #ffd8ac;
+    --header-box-third-color: #e9bd2e;
+    --header-box-fourth-color: #ff7800;
+    --header-right-line-color: #fcd600;
+    --header-bottom-line-color: linear-gradient(90deg, rgba(0, 121, 215, 1) 35%, rgba(252, 214, 0, 1) 84%);
+    --header-bottom-line-fallback-color: rgb(0, 121, 211);
+    --footer-color: #bcb9bc;
+  }
+
+  @font-face {
+    font-family: "tahoma";
+    src: url("/font/fs-tahoma-8px-v2/fs-tahoma-8px-v2.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "SerenityOS-Emoji";
+    src: url("/font/SerenityOS-Emoji/SerenityOS-Emoji.ttf") format("truetype");
+  }
+
+  emoji {
+    font-family: "SerenityOS-Emoji";
+    font-size: 20px;
+  }
+
+  html {
+    background-image: url("/background.jpg");
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    margin: auto;
+    height: 100%;
+    background: var(--body-color);
+  }
+
+  .border {
+    font-family: "tahoma";
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pageWrapper {
+    padding-bottom: 40px;
+    overflow: auto;
+  }
+
+  .content h1 {
+    font-size: 30px;
+    font-weight: 600px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .content p {
+    font-size: 30px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    body {
+      background-image: url("/background.jpg");
+    }
+
+    .border {
+      position: absolute;
+      left: 50%;
+      border-right: 3px solid;
+      border-left: 3px solid;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 30%;
+    }
+  }
+
+  @media only screen and (min-width: 800px) {
+    body {
+      background: none;
+    }
+
+    .border {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border: 3px solid;
+      border-radius: 15px;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      max-width: 60%;
+      max-height: 90%;
+    }
+
+    .navbar {
+      border-radius: 12px 12px 0px 0px;
+    }
+
+    .navbarMenuDropdown {
+      border: 3px solid black;
+      border-top: none;
+      border-left: none;
+      border-radius: 0px 0px 15px 0px;
+    }
+
+    .headerBottom {
+      border-bottom: 3px solid black;
+    }
+
+    .pageWrapper {
+      border-radius: 0px 0px 15px 15px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer {
+      border-top: 3px solid black;
+      border-radius: 0px 0px 12px 12px;
+    }
+  }
+</style>

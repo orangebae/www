@@ -1,0 +1,29 @@
+{
+  "socials": [
+    {
+      "name": "Anilist",
+      "icon": "icon/anilist.png",
+      "url": "https://anilist.co/user/5240790"
+    },
+    {
+      "name": "Letterboxd",
+      "icon": "icon/lb.png",
+      "url": "https://letterboxd.com/lemonbae"
+    },
+    {
+      "name": "Last.fm",
+      "icon": "icon/lastfm.png",
+      "url": "https://www.last.fm/user/ba-e"
+    },
+    {
+      "name": "AOTY",
+      "icon": "icon/aoty.png",
+      "url": "https://www.albumoftheyear.org/user/durianbae"
+    },
+    {
+      "name": "RetroAchievements",
+      "icon": "icon/ra.png",
+      "url": "https://retroachievements.org/user/pearbae"
+    }
+  ]
+}
