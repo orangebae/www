@@ -1,90 +1,24 @@
-<div class="navbar" transition:persist>
-  <div class="navbarMenuWrapper">
-    <div class="navbarMenu">
-      <img src="icon/navbar.png" width="26" style="vertical-align: text-top" />
+<div border-b="3 solid navbar-border" bg-navbar flex justify-between items-center min-h-10 w-full sticky top-0 color-white font-size-8 z-36 transition:persist>
+  <div relative select-none>
+    <div ml-1 id="navbarMenu">
+      <img src="icon/navbar.png" width="26" align-text-top />
       Menu
     </div>
-    <div class="navbarMenuDropdown">
-      <a href="/" style="border-bottom: 2px solid black"><emoji>🫐</emoji> Main</a>
+    <div animate="fade-in duration-70" border="2 solid black" border-t-none border-l-none hidden absolute bg-navbar-menu min-w-45 mt-1.7 shadow-md id="navbarMenuDropdown">
+      <a href="/" border-b="2 solid"><emoji>🫐</emoji> Main</a>
       <a style="color: gray"><emoji>🌈</emoji> Guestbook</a>
       <a style="color: gray"><emoji>🎶</emoji> Music</a>
       <a style="color: gray"><emoji>🐱</emoji> Cats</a>
       <a style="color: gray"><emoji>🧦</emoji> Button Wall</a>
-      <a href="credits" style="border-top: 2px solid black"><emoji>ℹ️</emoji> Credits</a>
+      <a href="credits" border-t="2 solid"><emoji>ℹ️</emoji> Credits</a>
       <a href="https://github.com/orangebae/www"><emoji>👨‍💻</emoji>Source Code</a>
     </div>
   </div>
-  <div class="navbarTime"></div>
+  <div mr-1 select-none id="navbarTime"></div>
 </div>
 
 <style>
-  .navbar {
-    border-bottom: 3px solid var(--navbar-border-color);
-    background-color: var(--navbar-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 40px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    color: white;
-    font-weight: 500;
-    font-size: 30px;
-    z-index: 99;
-  }
-
-  .navbarMenuWrapper {
-    position: relative;
-  }
-
-  .navbarMenu {
-    margin-left: 10px;
-  }
-
-  @keyframes growDown {
-    from {
-      transform: translateY(-1%);
-      opacity: 0.25;
-    }
-
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .navbarMenuDropdown {
-    animation: growDown 70ms ease-in-out;
-    display: none;
-    border: 2px solid black;
-    border-top: none;
-    border-left: none;
-    position: absolute;
-    background-color: var(--navbar-menu-color);
-    min-width: 195px;
-    margin-top: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .navbarMenuDropdown a {
-    color: black;
-    padding: 9px 16px;
-    text-decoration: none;
-    font-size: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-evenly;
-    gap: 5px;
-  }
-
-  .navbarMenuDropdown a:hover {
-    background-color: var(--navbar-menu-hover-color);
-  }
-
-  .navbarTime {
-    margin-right: 10px;
-    user-select: none;
+  #navbarMenuDropdown a {
+    @apply hover:bg-navbar-menu-hover color-black p-2 no-underline font-size-8 flex items-center gap-1
   }
 </style>

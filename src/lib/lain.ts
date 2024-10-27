@@ -1,5 +1,5 @@
-const dropdown = document.querySelector<HTMLElement>(".navbarMenuDropdown");
-const navbarMenu = document.querySelector(".navbarMenu");
+const dropdown = document.getElementById("navbarMenuDropdown");
+const navbarMenu = document.getElementById("navbarMenu");
 
 navbarMenu?.addEventListener("click", () => {
   return dropdown?.style.display === "block" ? (dropdown!.style.display = "") : (dropdown!.style.display = "block");
@@ -10,8 +10,9 @@ dropdown?.addEventListener("click", () => {
 });
 
 let allLoveLain = 0;
-const timeDisplay = document.querySelector(".navbarTime");
-const dateDisplay = document.querySelector(".headerDate");
+
+const timeDisplay = document.getElementById("navbarTime");
+const dateDisplay = document.getElementById("headerDate");
 
 setDateAndTime();
 

@@ -8,10 +8,12 @@ interface Props {
 
 const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
+
+import '@unocss/reset/eric-meyer.css'
 ---
 
 <!doctype html>
-<html lang="en">
+<html body-background h-full lang="en">
   <head>
     <meta name="robots" content="noindex, nofollow" />
     <meta charset="UTF-8" />
@@ -22,10 +24,10 @@ import { ViewTransitions } from "astro:transitions";
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body>
-    <div class="border">
+  <body bg-body h-full m-auto m-0>
+    <div font-tahoma class="border">
       <Navbar />
-      <div class="pageWrapper" transition:animate="initial">
+      <div pb-10 overflow-auto class="pageWrapper" transition:animate="initial">
         <div class="content">
           <slot />
         </div>
@@ -40,24 +42,6 @@ import { ViewTransitions } from "astro:transitions";
 </script>
 
 <style is:global>
-  :root {
-    --body-color: rgba(255, 255, 255, 0.8);
-    --navbar-color: #021fac;
-    --navbar-border-color: #1b35b4;
-    --navbar-menu-color: #bcb9bc;
-    --navbar-menu-hover-color: gray;
-    --header-body-color: linear-gradient(90deg, rgba(112, 205, 84, 1) 0%, rgba(0, 121, 215, 1) 69%);
-    --header-body-fallback-color: pink;
-    --header-box-default-color: #f3dbd0;
-    --header-box-second-color: #ffd8ac;
-    --header-box-third-color: #e9bd2e;
-    --header-box-fourth-color: #ff7800;
-    --header-right-line-color: #fcd600;
-    --header-bottom-line-color: linear-gradient(90deg, rgba(0, 121, 215, 1) 35%, rgba(252, 214, 0, 1) 84%);
-    --header-bottom-line-fallback-color: rgb(0, 121, 211);
-    --footer-color: #bcb9bc;
-  }
-
   @font-face {
     font-family: "tahoma";
     src: url("/font/fs-tahoma-8px-v2/fs-tahoma-8px-v2.ttf") format("truetype");
@@ -70,39 +54,11 @@ import { ViewTransitions } from "astro:transitions";
 
   emoji {
     font-family: "SerenityOS-Emoji";
-    font-size: 20px;
-  }
-
-  html {
-    background-image: url("/background.jpg");
-    height: 100%;
-  }
-
-  body {
-    margin: 0;
-    margin: auto;
-    height: 100%;
-    background: var(--body-color);
-  }
-
-  .border {
-    font-family: "tahoma";
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .pageWrapper {
-    padding-bottom: 40px;
-    overflow: auto;
+    font-size: 1.5rem;
   }
 
   .content h1 {
-    font-size: 30px;
-    font-weight: 600px;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    @apply font-size-8 font-semibold ml-2.5 mt-1.5 mb-1
   }
 
   .content p {
@@ -133,7 +89,7 @@ import { ViewTransitions } from "astro:transitions";
 
   @media only screen and (min-width: 800px) {
     body {
-      background: none;
+      background: none !important;
     }
 
     .border {
